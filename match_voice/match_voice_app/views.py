@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def index(request):
+    context = {
+        "title": "MatchVoice"
+    }
+    return render(request, "match_voice/index.html", context=context)
