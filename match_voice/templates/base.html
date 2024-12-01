@@ -32,8 +32,13 @@
                     <li><a href="about.html" class="nav-link px-2 text-white">About</a></li>
                 </ul>
 
-                <form class="d-flex me-5">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex me-5" method="get" action="{% url 'match_voice:search' %}">
+                     <input class="form-control me-2"
+                             type="search"
+                             name="query"
+                             placeholder="Search"
+                             aria-label="Search"
+                             value="{{ request.GET.query }}">
                     <button class="btn btn-outline-success text-white" type="submit">Search</button>
                 </form>
 
