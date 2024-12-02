@@ -1,17 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="text-white">
+    <div class="container mt-5 mb-2">
+    <div class="text-white bg-dark p-4 rounded custom-shadow">
         <h1>Search Results for "{{ query }}"</h1>
-    {% if results %}
-        <ul>
-            {% for result in results %}
-                <li>{{ result }}</li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No results found.</p>
-    {% endif %}
+        {% if results %}
+            <ul>
+                {% for result in results %}
+                    <li>{{ result }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No results found.</p>
+        {% endif %}
     </div>
+</div>
 
 {% endblock %}

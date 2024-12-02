@@ -8,7 +8,7 @@
             <div class="card border-dark rounded custom-shadow h-100">
                 <img src="{{ tournament.tournament_image.url }}" class="card-img-top" alt="{{ tournament.name }}">
                 <div class="card-body bg-dark text-white">
-                    <a href="#">
+                    <a href="{% url "match_voice:tournament-detail" tournament.pk %}">
                         <p class="card-title">{{ tournament.name }}</p>
                         <p class="card-text text-truncate">{{ tournament.info }}</p>
                     </a>

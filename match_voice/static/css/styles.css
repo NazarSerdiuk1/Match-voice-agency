@@ -26,6 +26,6 @@ body {
     text-decoration: none;
 }
 .card-detail {
-    max-width: 800px;
+    max-width: fit-content;;
     max-height: 800px;
 }

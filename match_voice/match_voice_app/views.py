@@ -1,6 +1,7 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from .models import Tournament, Match, Commentator
+from django.views import generic
 
 
 def index(request):
@@ -28,16 +29,14 @@ def search_view(request):
     )
 
 
-def tournament_list(request):
-    tournaments = Tournament.objects.all()
+class TournamentListView(generic.ListView):
+    model = Tournament
+    template_name = "match_voice/tournament_list.html"
+    context_object_name = "tournaments"
     paginate_by = 3
 
-    paginator = Paginator(tournaments, paginate_by)
-    page_number = request.GET.get("page")
-    page_obj = paginator.get_page(page_number)
 
-    context = {
-        "tournaments" : tournaments,
-        "page_obj": page_obj,
-    }
-    return render(request, "match_voice/tournament_list.html", context=context)
+class TournamentDetailView(generic.DetailView):
+    model = Tournament
+    template_name = "match_voice/tournament_detail.html"
+    context_object_name = "tournament"
