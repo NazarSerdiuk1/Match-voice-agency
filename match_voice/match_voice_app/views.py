@@ -40,3 +40,40 @@ class TournamentDetailView(generic.DetailView):
     model = Tournament
     template_name = "match_voice/tournament_detail.html"
     context_object_name = "tournament"
+
+
+class MatchListView(generic.ListView):
+    model = Match
+    template_name = "match_voice/match_list.html"
+    context_object_name = "matches"
+    paginate_by = 3
+
+    def get_queryset(self):
+        return (
+            Match.objects.select_related("tournament")
+            .prefetch_related("commentators")
+            .all()
+        )
+
+
+class MatchDetailView(generic.DetailView):
+    model = Match
+    template_name = "match_voice/match_detail.html"
+    context_object_name = "match"
+
+
+class CommentatorListView(generic.ListView):
+    model = Commentator
+    template_name = "match_voice/commentator_list.html"
+    context_object_name = "commentators"
+    paginate_by = 3
+
+
+class CommentatorDetailView(generic.DetailView):
+    model = Commentator
+    template_name = "match_voice/commentator_detail.html"
+    context_object_name = "commentator"
+
+
+def about(request):
+    return render(request, "match_voice/about.html")

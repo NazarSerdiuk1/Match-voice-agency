@@ -19,7 +19,7 @@ class CommentatorAdmin(UserAdmin):
                     "fields": (
                         "first_name",
                         "last_name",
-                        "username"
+                        "username",
                         "years_of_experience",
                     )
                 },

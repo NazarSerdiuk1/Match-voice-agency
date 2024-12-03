@@ -3,14 +3,13 @@
 
 {% block content %}
 <div class="container d-flex flex-wrap">
-    {% for tournament in page_obj.object_list %}
+    {% for tournament in tournaments %}
         <div class="col-lg-4 col-md-6 p-4">
             <div class="card border-dark rounded custom-shadow h-100">
                 <img src="{{ tournament.tournament_image.url }}" class="card-img-top" alt="{{ tournament.name }}">
                 <div class="card-body bg-dark text-white">
                     <a href="{% url "match_voice:tournament-detail" tournament.pk %}">
-                        <p class="card-title">{{ tournament.name }}</p>
-                        <p class="card-text text-truncate">{{ tournament.info }}</p>
+                        <h2>{{ tournament.name }}</h2>
                     </a>
                 </div>
             </div>

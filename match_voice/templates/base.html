@@ -27,9 +27,9 @@
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="{% url 'match_voice:tournament-list' %}" class="nav-link px-2 text-white">Tournaments</a></li>
-                    <li><a href="matches.html" class="nav-link px-2 text-white">Matches</a></li>
-                    <li><a href="commentators.html" class="nav-link px-2 text-white">Commentators</a></li>
-                    <li><a href="about.html" class="nav-link px-2 text-white">About</a></li>
+                    <li><a href="{% url 'match_voice:match-list' %}" class="nav-link px-2 text-white">Matches</a></li>
+                    <li><a href="{% url 'match_voice:commentator-list' %}" class="nav-link px-2 text-white">Commentators</a></li>
+                    <li><a href="{% url 'match_voice:about' %}" class="nav-link px-2 text-white">About</a></li>
                 </ul>
 
                 <form class="d-flex me-5" method="get" action="{% url 'match_voice:search' %}">
@@ -56,4 +56,6 @@
     {% block pagination %}
     {% include "includes/pagination.html" %}
   {% endblock %}
+
+  {% include 'includes/footer.html' %}
 </body>
