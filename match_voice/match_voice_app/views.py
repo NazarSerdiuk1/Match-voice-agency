@@ -1,7 +1,9 @@
-from django.core.paginator import Paginator
 from django.shortcuts import render
 from .models import Tournament, Match, Commentator
 from django.views import generic
+from django.contrib.auth.views import LoginView
+from django.views.generic.edit import FormView
+from .forms import LoginForm, SignUpForm
 
 
 def index(request):
@@ -77,3 +79,18 @@ class CommentatorDetailView(generic.DetailView):
 
 def about(request):
     return render(request, "match_voice/about.html")
+
+
+class CustomLoginView(LoginView):
+    template_name = "match_voice/login.html"
+    form_class = LoginForm
+
+
+class SignUpView(FormView):
+    template_name = "match_voice/sign_up.html"
+    form_class = SignUpForm
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+
