@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container d-flex flex-wrap">
+   {% for commentator in commentators %}
+    <div class="col-lg-4 col-md-6 p-4">
+        <div class="card border-dark rounded custom-shadow h-100">
+            <div class="card-body bg-dark text-white">
+                 <a href="{% url "match_voice:commentator-detail" commentator.pk %}">
+                    <h2>{{ commentator.first_name }} {{ commentator.last_name }}</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

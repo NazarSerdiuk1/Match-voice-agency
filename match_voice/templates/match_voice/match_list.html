@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container d-flex flex-wrap">
+   {% for match in matches %}
+    <div class="col-lg-4 col-md-6 p-4">
+        <div class="card border-dark rounded custom-shadow h-100">
+            <img src="{{ match.match_image.url }}" class="card-img-top" alt="{{ tournament.name }}">
+            <div class="card-body bg-dark text-white">
+                 <a href="{% url "match_voice:match-detail" match.pk %}">
+                    <h2>{{ match.title }}</h2>
+                    <p class="card-text">Tournament: {{ match.tournament.name }}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
+
+{% include 'includes/pagination.html' %}
+ 
+
