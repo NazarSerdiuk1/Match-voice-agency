@@ -1,0 +1,166 @@
+[
+{
+    "model": "match_voice_app.tournament",
+    "pk": 2,
+    "fields": {
+        "name": "UEFA Champions League",
+        "info": "The UEFA Champions League is the premier annual club football tournament in Europe, organized by the Union of European Football Associations (UEFA). The tournament has been held since 1955 and was originally known as the European Champion Clubs' Cup before adopting its current name in 1992.",
+        "tournament_image": "tournament_images/Champions_Leage.jpg"
+    }
+},
+{
+    "model": "match_voice_app.tournament",
+    "pk": 3,
+    "fields": {
+        "name": "UEFA Europa League",
+        "info": "The UEFA Europa League is an annual club football tournament in Europe, organized by the Union of European Football Associations (UEFA). It was established in 1971 as the UEFA Cup and was rebranded in 2009 to its current name.",
+        "tournament_image": "tournament_images/Europe_Leage.jpg"
+    }
+},
+{
+    "model": "match_voice_app.tournament",
+    "pk": 4,
+    "fields": {
+        "name": "UEFA Europa Conference",
+        "info": "The UEFA Europa Conference League is an annual club football tournament in Europe, introduced by the Union of European Football Associations (UEFA) in 2021. It serves as the third tier of European club competitions.",
+        "tournament_image": "tournament_images/Conference_tests.jpg"
+    }
+},
+{
+    "model": "match_voice_app.tournament",
+    "pk": 5,
+    "fields": {
+        "name": "UEFA Nations League",
+        "info": "The UEFA Nations League is an international football competition for European national teams, organized by the Union of European Football Associations (UEFA). It was introduced in 2018 to replace international friendlies with competitive matches and enhance national team football.",
+        "tournament_image": "tournament_images/lnac.jpg"
+    }
+},
+{
+    "model": "match_voice_app.commentator",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$BbvSYtEbOaYkn9AwaXQdxs$4Lq64lo4XlHmn5F0eofzD3BjXJ/UM6+atAG5uVeyvn0=",
+        "last_login": "2024-12-04T18:07:36.983Z",
+        "is_superuser": true,
+        "username": "admin_staff",
+        "first_name": "Admin",
+        "last_name": "Staff",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-11-30T11:00:50Z",
+        "years_of_experience": 5,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "match_voice_app.commentator",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$S8nuNA8NWMGLH18lyOKkZb$UjU1XVBfpBQGmM6PM3droxrMXYkHPtMHL5Mp1xDErHk=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Peter_Cury",
+        "first_name": "Peter",
+        "last_name": "Cury",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-02T15:00:31.366Z",
+        "years_of_experience": 6,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "match_voice_app.commentator",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$4hc8MDTZ1P3gUztCUG886t$Ek6oQ5l/wdCclMN+e83cbab8Bqzci+4KC9J3svQ9Qco=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Viktor_Vatsko",
+        "first_name": "Viktor",
+        "last_name": "Vatsko",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-02T15:14:16Z",
+        "years_of_experience": 15,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "match_voice_app.commentator",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$ryKBmFZsQUgY0r0hKQpz7u$PECkVaEHmdFGKVuEavUEug8xhlE93Q1IOupNopZWI6M=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Oleg_Minin",
+        "first_name": "Oleg",
+        "last_name": "Minin",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-03T13:39:33.436Z",
+        "years_of_experience": 2,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "match_voice_app.match",
+    "pk": 1,
+    "fields": {
+        "title": "Barcelona vs Bayern",
+        "match_date": "2024-09-13",
+        "match_image": "tournament_images/bbbb.jpg",
+        "tournament": 2,
+        "commentators": [
+            2
+        ]
+    }
+},
+{
+    "model": "match_voice_app.match",
+    "pk": 2,
+    "fields": {
+        "title": "Legia vs Betis",
+        "match_date": "2024-09-05",
+        "match_image": "tournament_images/Legia-betis.jpg",
+        "tournament": 4,
+        "commentators": [
+            2
+        ]
+    }
+},
+{
+    "model": "match_voice_app.match",
+    "pk": 3,
+    "fields": {
+        "title": "Dynamo vs Olimpiacos",
+        "match_date": "2024-09-12",
+        "match_image": "tournament_images/Dynamo-olimpiacos.jpg",
+        "tournament": 3,
+        "commentators": [
+            3
+        ]
+    }
+},
+{
+    "model": "match_voice_app.match",
+    "pk": 4,
+    "fields": {
+        "title": "Croatia vs Spain",
+        "match_date": "2024-10-04",
+        "match_image": "tournament_images/Croatia-spain.jpg",
+        "tournament": 5,
+        "commentators": [
+            3
+        ]
+    }
+}
+]
