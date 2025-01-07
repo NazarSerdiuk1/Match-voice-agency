@@ -5,7 +5,6 @@ from django.db import models
 class Tournament(models.Model):
     name = models.CharField(max_length=255, unique=True)
     info = models.TextField(blank=True, null=True)
-    tournament_image = models.ImageField(upload_to="tournament_images", blank=True, null=True,)
 
     class Meta:
         ordering = ["name"]
@@ -28,7 +27,6 @@ class Commentator(AbstractUser):
 class Match(models.Model):
     title = models.CharField(max_length=255)
     match_date = models.DateField(blank=True, null=True)
-    match_image = models.ImageField(upload_to="tournament_images", blank=True, null=True)
     tournament = models.ForeignKey(Tournament, on_delete=models.CASCADE)
     commentators = models.ManyToManyField(Commentator, related_name="matches")
 
