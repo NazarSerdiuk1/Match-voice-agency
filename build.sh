@@ -3,10 +3,10 @@
 set -o errexit
 
 # Modify this line as needed for your package manager (pip, poetry, etc.)
-pip install -r requirements.txt
+pip install -r ./match_voice/requirements.txt
 
 # Convert static asset files
-python manage.py collectstatic --no-input
+python ./match_voice/manage.py collectstatic --no-input
 
 # Apply any outstanding database migrations
-python manage.py migrate
+python ./match_voice/manage.py migrate
